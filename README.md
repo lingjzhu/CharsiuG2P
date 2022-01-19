@@ -1,4 +1,7 @@
 # CharsiuG2P
+### Usage
+
+### Training and fine-tuning
 
 ### G2P Datasets
  - Kurdish: https://github.com/AsoSoft/Kurdish-G2P-dataset
