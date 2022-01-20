@@ -6,6 +6,12 @@ CharsiuG2P is a massively multilingual model for grapheme-to-phoneme conversion.
 
 ### Training and fine-tuning
 
+### Docker image for *espeak-ng*  
+The Docker image for *espeak-ng* is [available on Docker hub](https://hub.docker.com/r/lukeum/espeak-ng).
+You can use *espeak-ng* to perform G2P using the following code. 
+```
+docker pull lukeum/espeak-ng
+```
 ### G2P Datasets
  - [British English (RP/Standard Southern British ) pronunciation dictionary](https://github.com/JoseLlarena/Britfone)
  - [British English pronunciations](https://www.openslr.org/14/)
