@@ -18,3 +18,5 @@ CharsiuG2P is a massively multilingual model for grapheme-to-phoneme conversion.
  - [Sigmorphon Multilingual G2P](https://github.com/sigmorphon/2020/tree/master/task1)
  - [Swedish pronunciation dictionary](https://www.openslr.org/29/)
  - [Thai G2P](https://github.com/wannaphong/thai-g2p/blob/master/wiktionary-11-2-2020.tsv)
+ - [wiki-pronunciation-dict](https://github.com/DanielSWolf/wiki-pronunciation-dict)
+ - [wikipron](https://github.com/CUNY-CL/wikipron)
