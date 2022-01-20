@@ -10,6 +10,8 @@ CharsiuG2P is a ByT5 model for grapheme-to-phoneme conversion in over 100 langua
 - [Training and fine-tuning](https://github.com/lingjzhu/CharsiuG2P#training-and-fine-tuning)
 - [Docker image for *espeak-ng* ](https://github.com/lingjzhu/CharsiuG2P#docker-image-for-espeak-ng)
 - [G2P Datasets](https://github.com/lingjzhu/CharsiuG2P#g2p-datasets)
+- [Disclaimer]()
+- [Contact]()
 
 
 ### Usage
@@ -41,3 +43,34 @@ A collection of publicly available G2P data are listed below.
  - [Thai G2P](https://github.com/wannaphong/thai-g2p/blob/master/wiktionary-11-2-2020.tsv)
  - [wiki-pronunciation-dict](https://github.com/DanielSWolf/wiki-pronunciation-dict)
  - [wikipron](https://github.com/CUNY-CL/wikipron)
+
+
+### Disclaimer
+
+This tool is a beta version and is still under active development. It may have bugs and quirks, alongside the difficulties and provisos which are described throughout the documentation. 
+This tool is distributed under MIT license. Please see [license](https://github.com/lingjzhu/charsiu/blob/main/LICENSE) for details. 
+
+By using this tool, you acknowledge:
+
+* That you understand that this tool does not produce perfect camera-ready data, and that all results should be hand-checked for sanity's sake, or at the very least, noise should be taken into account.
+
+* That you understand that this tool is a work in progress which may contain bugs.  Future versions will be released, and bug fixes (and additions) will not necessarily be advertised.
+
+* That this tool may break with future updates of the various dependencies, and that the authors are not required to repair the package when that happens.
+
+* That you understand that the authors are not required or necessarily available to fix bugs which are encountered (although you're welcome to submit bug reports to Jian Zhu (lingjzhu@umich.edu), if needed), nor to modify the tool to your needs.
+
+* That you will acknowledge the authors of the tool if you use, modify, fork, or re-use the code in your future work.  
+
+* That rather than re-distributing this tool to other researchers, you will instead advise them to download the latest version from the website.
+
+... and, most importantly:
+
+* That neither the authors, our collaborators, nor the the University of Michigan or any related universities on the whole, are responsible for the results obtained from the proper or improper usage of the tool, and that the tool is provided as-is, as a service to our fellow linguists.
+
+All that said, thanks for using our tool, and we hope it works wonderfully for you!
+
+### Contact
+Please contact Jian Zhu ([lingjzhu@umich.edu](lingjzhu@umich.edu)) for technical support.  
+Contact Cong Zhang ([cong.zhang@ru.nl](cong.zhang@ru.nl)) if you would like to receive more instructions on how to use the package.
+
