@@ -30,6 +30,8 @@ docker pull lukeum/espeak-ng
 ### G2P Datasets
 A detailed catalogue of G2P resources with downloadable links can be found in [this form](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
 
+Word lists are acquired via [Leipzig Corpora Collection](https://wortschatz.uni-leipzig.de/en/download).
+
 A collection of publicly available G2P data are listed below.
  - [British English (RP/Standard Southern British ) pronunciation dictionary](https://github.com/JoseLlarena/Britfone)
  - [British English pronunciations](https://www.openslr.org/14/)
