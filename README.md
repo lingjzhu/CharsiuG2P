@@ -17,6 +17,7 @@ CharsiuG2P is a ByT5 model for grapheme-to-phoneme conversion in over 100 langua
 ### Usage
 
 ### Pretrained models
+Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P"
 
 ### Training and fine-tuning
 
