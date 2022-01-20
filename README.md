@@ -13,7 +13,7 @@ You can use *espeak-ng* to perform G2P using the following code.
 docker pull lukeum/espeak-ng
 ```
 ### G2P Datasets
-A detailed catalogue of G2P resources with downloadable links can be found via [this link](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
+A detailed catalogue of G2P resources with downloadable links can be found in [this form](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
 
 A collection of publicly available G2P data are listed below.
  - [British English (RP/Standard Southern British ) pronunciation dictionary](https://github.com/JoseLlarena/Britfone)
