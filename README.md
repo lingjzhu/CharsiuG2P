@@ -10,7 +10,7 @@ CharsiuG2P is a ByT5 model for grapheme-to-phoneme conversion in over 100 langua
 - [Training and fine-tuning](https://github.com/lingjzhu/CharsiuG2P#training-and-fine-tuning)
 - [Docker image for *espeak-ng* ](https://github.com/lingjzhu/CharsiuG2P#docker-image-for-espeak-ng)
 - [G2P Datasets](https://github.com/lingjzhu/CharsiuG2P#g2p-datasets)
-- [Disclaimer]()
+- [Disclaimer](https://github.com/lingjzhu/CharsiuG2P/blob/main/README.md#disclaimer)
 - [Contact](https://github.com/lingjzhu/CharsiuG2P/blob/main/README.md#contact)
 
 
