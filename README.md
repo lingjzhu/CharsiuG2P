@@ -1,6 +1,6 @@
 # CharsiuG2P
 ### Introduction
-CharsiuG2P is a massively multilingual ByT5 model for grapheme-to-phoneme conversion. 
+CharsiuG2P is a ByT5 model for grapheme-to-phoneme conversion in over 100 languages. 
 
 ### Usage
 
