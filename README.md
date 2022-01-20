@@ -1,13 +1,15 @@
 # CharsiuG2P
-Table of content
+
+### Introduction
+CharsiuG2P is a ByT5 model for grapheme-to-phoneme conversion in over 100 languages. 
+
+### Table of content
 - [Introduction](https://github.com/lingjzhu/CharsiuG2P#introduction)
 - [Usage](https://github.com/lingjzhu/CharsiuG2P#usage)
 - [Training and fine-tuning](https://github.com/lingjzhu/CharsiuG2P#training-and-fine-tuning)
 - [Docker image for *espeak-ng* ](https://github.com/lingjzhu/CharsiuG2P#docker-image-for-espeak-ng)
 - [G2P Datasets](https://github.com/lingjzhu/CharsiuG2P#g2p-datasets)
 
-### Introduction
-CharsiuG2P is a ByT5 model for grapheme-to-phoneme conversion in over 100 languages. 
 
 ### Usage
 
