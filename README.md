@@ -35,6 +35,7 @@ A detailed catalogue of G2P resources with downloadable links can be found in [t
  - A collection of publicly available G2P data are listed below.
    - [British English (RP/Standard Southern British ) pronunciation dictionary](https://github.com/JoseLlarena/Britfone)
    - [British English pronunciations](https://www.openslr.org/14/)
+   - [eSpeak NG](https://github.com/espeak-ng/espeak-ng)
    - [G2P for (almost) any languages](https://drive.google.com/drive/u/0/folders/0B7R_gATfZJ2aWkpSWHpXUklWUmM?resourcekey=0-aj4VU-D4RztBPCFLKNNThQ)
    - [Kurdish G2P](https://github.com/AsoSoft/Kurdish-G2P-dataset)
    - [ipa-dict - Monolingual wordlists with pronunciation information in IPA](https://github.com/open-dict-data/ipa-dict#languages)
