@@ -29,6 +29,8 @@ docker pull lukeum/espeak-ng
 ```
 Please refer to espeak-ng's [user guide](https://github.com/espeak-ng/espeak-ng/blob/master/src/espeak-ng.1.ronn) for a tutorial.
 
+You can also convert it into a singualrity container.
+
 ### G2P Datasets
 A detailed catalogue of G2P resources with downloadable links can be found in [this form](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
 
