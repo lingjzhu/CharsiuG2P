@@ -1,7 +1,7 @@
 # CharsiuG2P
 
 ### Introduction
-CharsiuG2P is a ByT5 model for grapheme-to-phoneme conversion in over 100 languages. 
+CharsiuG2P is Python-based tool for grapheme-to-phoneme conversion in over 100 languages. 
 
 ### Table of content
 - [Introduction](https://github.com/lingjzhu/CharsiuG2P#introduction)
