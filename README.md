@@ -17,7 +17,7 @@ CharsiuG2P is Python-based tool for grapheme-to-phoneme conversion in over 100 l
 ### Usage
 
 ### Pretrained models
-Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P"
+Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P". 
 
 ### Training and fine-tuning
 
@@ -32,7 +32,7 @@ Please refer to espeak-ng's [user guide](https://github.com/espeak-ng/espeak-ng/
 You can also convert it into a singualrity container.
 
 ### G2P Datasets
-A detailed catalogue of G2P resources with downloadable links can be found in [this form](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
+A detailed catalogue of pronunciation dictionaries with downloadable links can be found in [this form](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
 
 - Word lists are acquired via [Leipzig Corpora Collection](https://wortschatz.uni-leipzig.de/en/download).
 
