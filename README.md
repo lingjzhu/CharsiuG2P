@@ -23,6 +23,7 @@ Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/c
 ### Training and fine-tuning
 
 ### Docker image for *espeak-ng*  
+For some phonetically regular languages, a rule-based G2P system works quite well. This can be done with *espeak-ng*. However, since the compilation of *espeak-ng* is non-trivial, we have provided a docker image of *espeak-ng* for quick use.
 The Docker image for *espeak-ng* is [available on Docker hub](https://hub.docker.com/r/lukeum/espeak-ng).
 You can use *espeak-ng* to perform G2P using the following code. 
 ```
@@ -31,6 +32,7 @@ docker pull lukeum/espeak-ng
 Please refer to espeak-ng's [user guide](https://github.com/espeak-ng/espeak-ng/blob/master/src/espeak-ng.1.ronn) for a tutorial.
 
 You can also convert it into a singualrity container.
+
 
 ### G2P Datasets
 A detailed catalogue of pronunciation dictionaries with downloadable links can be found in [this form](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
