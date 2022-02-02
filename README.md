@@ -1,7 +1,8 @@
 # CharsiuG2P
 
 ### Introduction
-CharsiuG2P is Python-based tool for grapheme-to-phoneme conversion in over 100 languages. 
+CharsiuG2P is Python-based tool for grapheme-to-phoneme conversion in over 100 languages.   
+Given an orthographic word, CharsiuG2P system first queries its phonemic transcription in a pronunciation dictionary, and, if the word is not present, predicts its pronunciation through a neural G2P model.
 
 ### Table of content
 - [Introduction](https://github.com/lingjzhu/CharsiuG2P#introduction)
