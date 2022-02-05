@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Jan 29 09:46:13 2022
 
-@author: lukeum
-"""
 
 import torch
 import torch.nn as nn
@@ -18,28 +14,8 @@ from tqdm import tqdm
 tokenizer = AutoTokenizer.from_pretrained('google/byt5-small')
 
 
-data = []
-with open('ko.txt') as f:
-    for line in f.readlines():
-        word, pron = line.strip().split('\t')
-        if ',' in pron:
-            pron = pron.split(',')[0]
-        data.append((word,pron.replace('/','')))
-        
-        
-def batchify(data,batch_size=32):
-    
-    size = len(data)
-    for idx in range(0,size,batch_size):
-        words = [i[0] for i in data[idx:min(size,idx+batch_size)]]
-        prons = [i[1] for i in data[idx:min(size,idx+batch_size)]]
-        
-        batch = tokenizer(words,padding=True,add_special_tokens=False,
-                          return_attention_mask=True,return_tensors='pt')
-        pron_batch = tokenizer(prons,padding=True,add_special_tokens=False,
-                          return_attention_mask=True,return_tensors='pt')
-        batch['labels'] = pron_batch['input_ids']
-        yield batch
+
+
         
         
 config = T5Config.from_pretrained('google/byt5-small')
