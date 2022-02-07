@@ -34,4 +34,6 @@ def load_pronuncation_dictionary(language: str) -> Dataset:
             
 
 
-data = load_pronuncation_dictionary(['yue'])
+if __name__ == "__main__":
+    
+    data = load_pronuncation_dictionary('yue')
