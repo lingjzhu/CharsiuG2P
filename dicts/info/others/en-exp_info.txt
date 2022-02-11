@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/JoseLlarena/Britfone/master/britfone.expansions.3.0.1.tsv
+license: MIT
