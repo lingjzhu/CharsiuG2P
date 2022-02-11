@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/hau_latn_narrow.tsv
+license: Apache License 2.0

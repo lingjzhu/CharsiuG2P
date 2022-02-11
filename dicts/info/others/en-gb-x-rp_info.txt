@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/JoseLlarena/Britfone/master/britfone.main.3.0.1.csv
+license: MIT
