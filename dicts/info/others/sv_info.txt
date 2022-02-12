@@ -1,2 +1,2 @@
-url: https://raw.githubusercontent.com/open-dict-data/ipa-dict/master/data/sv.txt
-license: MIT
+url: https://www.openslr.org/29/
+license: CC0

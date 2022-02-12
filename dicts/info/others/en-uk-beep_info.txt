@@ -1,0 +1,2 @@
+url: http://svr-www.eng.cam.ac.uk/comp.speech/Section1/Lexical/beep.html
+license: copyright OUP
