@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/rum_latn_broad.tsv
+license: Apache License 2.0

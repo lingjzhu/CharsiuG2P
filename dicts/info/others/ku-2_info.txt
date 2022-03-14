@@ -1,2 +1,0 @@
-url: https://raw.githubusercontent.com/AsoSoft/Kurdish-G2P-dataset/master/Wergor-words
-license: U/K

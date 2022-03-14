@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/AsoSoft/Kurdish-G2P-dataset/master/AsoSoft-top5K
+license: U/K
