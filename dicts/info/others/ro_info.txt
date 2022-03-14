@@ -1,2 +1,0 @@
-url: https://raw.githubusercontent.com/sigmorphon/2020/master/task1/data/dev/rum_dev.tsv
-license: U/K

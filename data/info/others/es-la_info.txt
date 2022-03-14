@@ -1,0 +1,2 @@
+url: https://www.openslr.org/34/
+license: Apache License 2.0
