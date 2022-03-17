@@ -1,2 +1,0 @@
-url: https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/dzo_tibt_broad.tsv
-license: Apache License 2.0

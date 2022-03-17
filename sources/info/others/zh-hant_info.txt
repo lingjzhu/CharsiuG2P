@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/open-dict-data/ipa-dict/master/data/zh_hant.txt
+license: MIT

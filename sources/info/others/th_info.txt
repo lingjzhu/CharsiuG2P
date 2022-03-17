@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/wannaphong/thai-g2p/master/wiktionary-11-2-2020.tsv
+license: Apache License 2.0

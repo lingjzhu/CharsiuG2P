@@ -2,17 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-from jiwer import wer,cer
-import numpy as np
 import torch
 
 
 from datasets import load_metric
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Union, Dict, List, Optional
 from transformers import AdamW, AutoTokenizer, T5ForConditionalGeneration, T5Config
 from transformers import (
-    HfArgumentParser,
     DataCollator,
     Seq2SeqTrainer, 
     Seq2SeqTrainingArguments,
@@ -21,7 +18,8 @@ from transformers import (
 
 import sys
 sys.path.append('src')
-from data_utils import load_pronuncation_dictionary
+from data_utils import load_pronuncation_dictionary, load_all_pronuncation_dictionaries
+from ByT5_MoE import SwitchT5ForConditionalGeneration
 
 
 def prepare_dataset(batch):
@@ -46,7 +44,7 @@ class DataCollatorWithPadding:
 
         batch = self.tokenizer(words,padding=self.padding,add_special_tokens=False,
                           return_attention_mask=True,return_tensors='pt')
-        pron_batch = self.tokenizer(prons,padding=self.padding,add_special_tokens=False,
+        pron_batch = self.tokenizer(prons,padding=self.padding,add_special_tokens=True,
                           return_attention_mask=True,return_tensors='pt')
         
         # replace padding with -100 to ignore loss correctly
@@ -58,15 +56,6 @@ class DataCollatorWithPadding:
     
 
                 
-                
-def evaluate_all_metrics(model,dataset,args):
-    
-    model.eval()
-    words = tokenizer('힐끔힐끔', return_tensors="pt")
-    out = model.generate(**words.to(device),num_beams=5).squeeze()
-    tokenizer.decode(out,skip_special_tokens=True)
-    return 
-        
 
 
 def compute_metrics(pred):
@@ -78,66 +67,124 @@ def compute_metrics(pred):
     label_str = processor.batch_decode(labels_ids, skip_special_tokens=True)
 
     cer = cer_metric.compute(predictions=pred_str, references=label_str)
-
-    return {"cer": cer}
+    wer = wer_metric.compute(predictions=pred_str, references=label_str)
+    return {"cer": cer, 'wer':wer}
 
 
 
 if __name__ == "__main__":
     
-    '''
+    
     parser = argparse.ArgumentParser()
-    parser.add_argument('integers', metavar='N', type=int, nargs='+',
-                        help='an integer for the accumulator')
-    parser.add_argument('grad_acc', type=int, default=8,
-                        help='an integer for the accumulator')    
+    parser.add_argument('--data', type=str, default=None)
+    parser.add_argument('--model',type=str,default='switch',help='switch or byt5')
+    parser.add_argument('--model_name',type=str,default='google/byt5-small')
+    parser.add_argument('--train_data',type=str,default='data/train')
+    parser.add_argument('--dev_data',type=str,default='data/dev')
+    parser.add_argument('--test_data',type=str,default='data/test')
+    parser.add_argument('--pretrained_model', type=bool, default=False)
+    parser.add_argument('--output_dir',type=str,default=None)
+    
+    # trainign hyperparameters
+    parser.add_argument('--fp16',type=bool,default=False,help="fp16 not available for switch transformers")
+    parser.add_argument('--train_batch_size',type=int,default=256)
+    parser.add_argument('--learning_rate',type=float,default=3e-4)
+    parser.add_argument('--warmup_steps',type=int,default=1000)
+    parser.add_argument('--epochs',type=int,default=100)
+    parser.add_argument('--eval_batch_size',type=int,default=512)
+    parser.add_argument('--gradient_accumulation',type=int,default=2)
+    parser.add_argument('--logging_steps',type=int,default=1000)
+    parser.add_argument('--save_steps',type=int,default=5000)
+    parser.add_argument('--eval_steps',type=int,default=5000)
+    parser.add_argument('--unk_prob',type=float,default=0.85)
+    
+    # model hyperparameters
+    parser.add_argument('--num_encoder_layers',type=int,default=8)
+    parser.add_argument('--num_decoder_layers',type=int,default=2)
+    parser.add_argument('--d_model',type=int,default=256)
+    parser.add_argument('--d_kv',type=int,default=64)
+    parser.add_argument('--d_ff',type=int,default=512)
+    
+    # MoE hyperparameters
+    parser.add_argument('--capacity_factor',type=float,default=1.0)
+    parser.add_argument('--n_experts',type=int,default=4)
+    parser.add_argument('--load_balancing_loss_weight',type=float,default=1e-2)
+    parser.add_argument('--is_scale_prob',type=bool,default=True)
+    parser.add_argument('--drop_tokens',type=bool,default=False)
+    
     args = parser.parse_args()
-    '''
     
+    # setting the evaluation metrics
     cer_metric = load_metric("cer")
-    '''
-    hypotheses = ['ki:m˥','a:m˥']
-    ground_truth = ['hi:m˥','a:m˥']
-    wer(ground_truth,hypotheses)
-    cer(ground_truth,hypotheses)
-    '''
-    
-    
-    
-    data = load_pronuncation_dictionary('other_dicts/fr-fr')
-    data = data.map(prepare_dataset)    
-    train_dataset = data
-    eval_dataset = data
-    
-    config = T5Config.from_pretrained('google/byt5-small')
-    #model = T5ForConditionalGeneration.from_pretrained('google/byt5-small')
-    
-    
-    config
-    config.num_decoder_layers = 2
-    config.num_layers = 8
-    config.d_kv = 32
-    config.d_model = 256
-    config.d_ff = 512
+    wer_metric = load_metric('wer')
 
-    model = T5ForConditionalGeneration(config)
+    # loading and preprocessing data
+    train_data = load_all_pronuncation_dictionaries(args.train_data, prefix=True, mask_prob=args.unk_prob)
+    train_data = train_data.map(prepare_dataset)    
+    train_dataset = train_data
     
-    tokenizer = AutoTokenizer.from_pretrained('google/byt5-small')
+    dev_data = load_all_pronuncation_dictionaries(args.dev_data, prefix=True)
+    dev_data = dev_data.map(prepare_dataset)    
+    dev_dataset = dev_data    
+    
+    test_data = load_all_pronuncation_dictionaries(args.test_data, prefix=True)
+    test_data = test_data.map(prepare_dataset)    
+    test_dataset = test_data    
 
-
+    
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name)
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+    
+    # intitalizing the model
+    if args.pretrained == True:
+        
+        model = T5ForConditionalGeneration.from_pretrained(args.model_name)
+        
+    else:
+        
+        config = T5Config.from_pretrained(args.model_name)
+        
+        config.num_decoder_layers = args.num_decoder_layers
+        config.num_layers = args.num_encoder_layers
+        config.d_kv = args.d_kv
+        config.d_model = args.d_model
+        config.d_ff = args.d_ff
+    
+        if args.model == 'byt5':
+            model = T5ForConditionalGeneration(config)
+            
+        elif args.model == 'switch':
+            config.capacity_factor = args.capacity_factor
+            config.is_scale_prob = args.is_scale_prob
+            config.n_experts = args.n_experts
+            config.drop_tokens = args.drop_tokens
+            config.lambda_ = args.load_balancing_loss_weight
+            model = SwitchT5ForConditionalGeneration(config)
+    
+   
+
+
+    
 
     
     training_args = Seq2SeqTrainingArguments(
         predict_with_generate=True,
+        generation_num_beams=5,
         evaluation_strategy="steps",
-        per_device_train_batch_size=256,
-        per_device_eval_batch_size=512,
-        fp16=False, 
-        output_dir="./results",
-        logging_steps=2,
-        save_steps=1000,
-        eval_steps=1000,
+        per_device_train_batch_size=args.train_batch_size,
+        per_device_eval_batch_size=args.eval_batch_size,
+        num_train_epochs=args.epochs,
+        gradient_accumulation_steps=args.gradient_accumulation,
+        learning_rate=args.learning_rate,
+        warmup_steps=args.warmup_steps,
+        lr_scheduler_type="cosine",
+        fp16=args.fp16, 
+        output_dir=args.output_dir,
+        logging_steps=args.logging_steps,
+        save_steps=args.save_steps,
+        eval_steps=args.eval_steps,
+        save_total_limit=2,
+        metric_for_best_model='cer'
     )
     
     
@@ -150,4 +197,6 @@ if __name__ == "__main__":
         eval_dataset=eval_dataset,
         data_collator=data_collator,
     )
+
+
     trainer.train()

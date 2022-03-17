@@ -1,2 +1,0 @@
-url: https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/bur_mymr_broad_filtered.tsv
-license: Apache License 2.0

@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/CUNY-CL/wikipron/master/data/scrape/tsv/lat_latn_vulg_narrow.tsv
+license: Apache License 2.0

@@ -732,8 +732,8 @@
 بباتەوە	.bi.ba.te.we
 ببرێتە	.bib.rê.te
 ببن	.bi.bin
-ببنە	.bi.bi.ne, .bib.ne
-ببنەوە	.bib.ne.we, .bi.bi.ne.we
+ببنە	.bi.bi.ne,.bib.ne
+ببنەوە	.bib.ne.we,.bi.bi.ne.we
 ببووی	.bi.bûy
 ببووە	.bi.bu.we
 ببووەوە	.bi.bu.we.we
@@ -750,14 +750,14 @@
 ببەستێتەوە	.bi.bes.tê.te.we
 ببەن	.bi.ben
 بتواندرێ	.bit.wan.di.rê
-بتوانم	.bit.wa.nim, .bi.twa.nim
-بتوانن	.bi.twa.nin, .bit.wa.nin
+بتوانم	.bit.wa.nim,.bi.twa.nim
+بتوانن	.bi.twa.nin,.bit.wa.nin
 بتوانین	.bi.twa.nîn
-بتوانێ	.bit.wa.nê, .bi.twa.nê
+بتوانێ	.bit.wa.nê,.bi.twa.nê
 بتوانێت	.bi.twa.nêt
 بخات	.bi.xat
 بخاتە	.bi.xa.te
-بخرێتە	.bi.xi.rê.te, .bix.rê.te
+بخرێتە	.bi.xi.rê.te,.bix.rê.te
 بخوێننەوە	.bi.xwê.ni.ne.we
 بخەنە	.bi.xe.ne
 بخەینە	.bi.xey.ne
@@ -766,7 +766,7 @@
 بداتە	.bi.da.te
 بداتەوە	.bi.da.te.we
 بدرێ	.bid.rê
-بدرێت	.bi.di.rêt, .bid.rêt
+بدرێت	.bi.di.rêt,.bid.rêt
 بدلیس	.bid.lîs
 بدۆزمەوە	.bi.doz.me.we
 بدۆزنەوە	.bi.do.zi.ne.we
@@ -3239,7 +3239,7 @@
 دەکەن	.de.ken
 دەکەنە	.de.ke.ne
 دەکەنەوە	.de.ke.ne.we
-دەکەون	.de.ke.win, .de.kewn
+دەکەون	.de.ke.win,.de.kewn
 دەکەونە	.de.ke.wi.ne
 دەکەوێ	.de.ke.wê
 دەکەوێت	.de.ke.wêt
@@ -5197,7 +5197,7 @@
 مەبەستەش	.me.bes.teş
 مەتر	.me.tir
 مەترسی	.me.tir.sî
-مەترسیدار	.me.tir.sî.dar, [.met.ri.sî.dar]
+مەترسیدار	.me.tir.sî.dar,[.met.ri.sî.dar]
 مەترسیداربوون	.me.tir.sî.dar.bûn
 مەترسیی	.me.tir.sîy
 مەترسییە	.me.tir.sî.ye
@@ -5284,7 +5284,7 @@
 ناتوانن	.na.twa.nin
 ناتوانیت	.na.twa.nît
 ناتوانین	.na.twa.nîn
-ناتوانێ	.nat.wa.nê, .na.twa.nê
+ناتوانێ	.nat.wa.nê,.na.twa.nê
 ناتوانێت	.nat.wa.nêt
 ناتۆ	.na.to
 ناحیەی	.naḧ.yey
@@ -5857,7 +5857,7 @@
 نەیانوێرا	.ne.yan.wê.ra
 نەیتوانی	.ney.twa.nî
 نەیتوانیوە	.ney.twa.nî.we
-نەیدەتوانی	.ney.det.wa.nî, .ney.de.twa.nî
+نەیدەتوانی	.ney.det.wa.nî,.ney.de.twa.nî
 نەینەوا	.ney.ne.wa
 نەیوێراوە	.ney.wê.ra.we
 نەیکا	.ney.ka
@@ -6789,7 +6789,7 @@
 پێشمەرگەکانی	.pêş.mer.ge.ka.nî
 پێشمەرگەی	.pêş.mer.gey
 پێشنیار	.pêş.nyar
-پێشنیاری	.pêş.nya.rî, [.pêş.nya.rî]
+پێشنیاری	.pêş.nya.rî,[.pêş.nya.rî]
 پێشنیاریان	.pêş.nyar.yan
 پێشنیارە	.pêş.nya.re
 پێشنیازی	[.pêş.nya.zî]
@@ -6920,7 +6920,7 @@
 پەرەی	.pe.rey
 پەستابەپەستا	.pes.ta.be.pes.ta
 پەسەند	.pe.send
-پەسەندکردنی	.pe.send.kir.di.nî, .pe.send.kird.nî
+پەسەندکردنی	.pe.send.kir.di.nî,.pe.send.kird.nî
 پەشیمان	.pe.şî.man
 پەشێو	.pe.şêw
 پەلاماری	.pe.la.ma.rî
@@ -7022,7 +7022,7 @@
 چاوە	.ça.we
 چاوەنواڕین	.ça.wen.wa.řîn
 چاوەڕوان	.ça.we.řwan
-چاوەڕوانی	.ça.weř.wa.nî, .ça.we.řwa.nî
+چاوەڕوانی	.ça.weř.wa.nî,.ça.we.řwa.nî
 چاوەڕوانیی	.ça.weř.wa.nîy
 چاوەڕێ	.ça.we.řê
 چاوەڕێی	.ça.we.řêy

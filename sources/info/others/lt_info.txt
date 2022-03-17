@@ -1,0 +1,2 @@
+url: https://raw.githubusercontent.com/sigmorphon/2020/master/task1/data/dev/lit_dev.tsv
+license: U/K
