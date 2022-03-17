@@ -1,2 +1,0 @@
-url: https://raw.githubusercontent.com/open-dict-data/ipa-dict/master/data/fi.txt
-license: MIT
