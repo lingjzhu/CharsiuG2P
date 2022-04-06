@@ -9,12 +9,12 @@ from datasets import Dataset
 from tqdm import tqdm
 
 
-def load_pronuncation_dictionary(path: str) -> Dataset:
+def load_pronuncation_dictionary(path: str, language: str, prefix: bool = False) -> Dataset:
     
     words = []
     prons = []
     variants = []
-    with open(os.path.join(path,language+'.tsv'),'r') as f:
+    with open(path,'r') as f:
         for line in f.readlines():
             word, pron = line.strip().split('\t')
             if ',' in pron:
@@ -22,6 +22,8 @@ def load_pronuncation_dictionary(path: str) -> Dataset:
                 pron = pron.split(',')[0]
             else:
                 variant = ''
+            if prefix == True:
+                word = '<'+language+'>:' + word
             words.append(word)
             prons.append(pron)
             variants.append(variant)
@@ -38,7 +40,7 @@ def load_pronuncation_dictionary(path: str) -> Dataset:
 def load_all_pronuncation_dictionaries(path: str, prefix: bool = False, mask_prob: float = 0.0, lower_case: bool = True) -> Dataset:
     
     
-    files = os.listdir(path)
+    files = [i for i in os.listdir(path) if i.endswith('.tsv')]
     
     all_data = pd.DataFrame()
     
