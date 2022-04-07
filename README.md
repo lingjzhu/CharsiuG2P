@@ -3,7 +3,7 @@
 ### Introduction
 CharsiuG2P is transformer based tool for grapheme-to-phoneme conversion in over 100 languages. Given an orthographic word, CharsiuG2P predicts its pronunciation through a neural G2P model.
 
-This repository also contains instructions to replicate the papaer *ByT5 model for massively multilingual grapheme-to-phoneme conversion*.  
+This repository also contains instructions to replicate the paper *ByT5 model for massively multilingual grapheme-to-phoneme conversion*.  
 
 ### Table of content
 - [Introduction](https://github.com/lingjzhu/CharsiuG2P#introduction)
@@ -22,6 +22,8 @@ This repository also contains instructions to replicate the papaer *ByT5 model f
 Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P". 
 
 ### Training and fine-tuning
+
+The code we used to train and finetune models in our paper can be found in the [notebooks/ folder](https://github.com/lingjzhu/CharsiuG2P/tree/main/notebooks).
 
 ### Docker image for *espeak-ng*  
 For some phonetically regular languages, a rule-based G2P system works quite well. This can be done with *espeak-ng*. However, since the compilation of *espeak-ng* is non-trivial, we have provided a docker image of *espeak-ng* for quick use.  
