@@ -27,9 +27,9 @@ Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/c
 Here we provide the code for training and fine-tuning the ByT5 G2P model. 
 
 
-In addition to ByT5, we also included a Switch ByT5 model class, which is essentially a switch transformer that takes byte-leve inputs. While a sparse transformer can theoretically increase parameters without increasing computational costs. We did not find it much faster that the vanilla ByT5 model. It could be that switch transformers are not beneficial at our scale (small model and small datasets). The extensive results for switch ByT5 models are not included in our model but they are available at [results/ fodler]().
+In addition to ByT5, we also included a Switch ByT5 model class, which is essentially a switch transformer that takes byte-leve inputs. While a sparse transformer can theoretically increase parameters without increasing computational costs. We did not find it much faster that the vanilla ByT5 model. It could be that switch transformers are not beneficial at our scale (small model and small datasets). The extensive results for switch ByT5 models are not included in our model but they are available at [results/]().
 
-**Note**. The code we used to train and finetune models in our paper can be found in [notebooks/ folder](https://github.com/lingjzhu/CharsiuG2P/tree/main/notebooks) and [train.py](https://github.com/lingjzhu/CharsiuG2P/blob/main/src/train.py).
+**Note**. The code we used to train and finetune models in our paper can be found in [notebooks/](https://github.com/lingjzhu/CharsiuG2P/tree/main/notebooks) and [train.py](https://github.com/lingjzhu/CharsiuG2P/blob/main/src/train.py).
 
 
 Finetune a pretrained ByT5 on all languages.
