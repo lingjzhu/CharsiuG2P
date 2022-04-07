@@ -10,7 +10,7 @@ This repository also contains instructions to replicate the paper *ByT5 model fo
 - [Usage](https://github.com/lingjzhu/CharsiuG2P#usage)
 - [Pretrained models](https://github.com/lingjzhu/CharsiuG2P/blob/main/README.md#pretrained-models)
 - [Training and fine-tuning](https://github.com/lingjzhu/CharsiuG2P#training-and-fine-tuning)
-- [Evaluation](https://github.com/lingjzhu/CharsiuG2P#Evaluation)
+- [Evaluation](https://github.com/lingjzhu/CharsiuG2P#evaluation)
 - [G2P Datasets](https://github.com/lingjzhu/CharsiuG2P#g2p-datasets)
 - [Docker image for *espeak-ng* ](https://github.com/lingjzhu/CharsiuG2P#docker-image-for-espeak-ng)
 - [Disclaimer](https://github.com/lingjzhu/CharsiuG2P/blob/main/README.md#disclaimer)
