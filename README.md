@@ -19,13 +19,14 @@ This repository also contains instructions to replicate the paper *ByT5 model fo
 
 
 ### Usage
+Coming soon.
 
 ### Results
 Results for different models are available at [multilingual_results/](https://github.com/lingjzhu/CharsiuG2P/tree/main/multilingual_results).
 The format is language PER WER. 
 
 ### Pretrained models
-Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P". 
+Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P". We are still in the process of uploading models.
 
 ### Training and fine-tuning
 
