@@ -8,6 +8,7 @@ This repository also contains instructions to replicate the paper *ByT5 model fo
 ### Table of content
 - [Introduction](https://github.com/lingjzhu/CharsiuG2P#introduction)
 - [Usage](https://github.com/lingjzhu/CharsiuG2P#usage)
+- [Results](https://github.com/lingjzhu/CharsiuG2P#results)
 - [Pretrained models](https://github.com/lingjzhu/CharsiuG2P/blob/main/README.md#pretrained-models)
 - [Training and fine-tuning](https://github.com/lingjzhu/CharsiuG2P#training-and-fine-tuning)
 - [Evaluation](https://github.com/lingjzhu/CharsiuG2P#evaluation)
@@ -18,6 +19,10 @@ This repository also contains instructions to replicate the paper *ByT5 model fo
 
 
 ### Usage
+
+### Results
+Results for different models are available at [multilingual_results/](https://github.com/lingjzhu/CharsiuG2P/tree/main/multilingual_results).
+The format is language PER WER. 
 
 ### Pretrained models
 Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P". 
