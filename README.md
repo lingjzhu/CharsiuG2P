@@ -80,9 +80,13 @@ python src/train.py --checkpoint path_to_pretrained_model_checkpoint --language 
 ### G2P Datasets
 A detailed catalogue of pronunciation dictionaries with downloadable links can be found in [this form](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
 
-We also make detailed documentation of the sources and the license of these data in *merge_final* page of the above form. Please cite the orginal sources to acknowledge the original authors if you use the data.
+We also make detailed documentation of the sources and the license of these data in *merge_final* page of the above form. **Please cite the orginal sources to acknowledge the original authors if you use the data.** The sources of the pronunciationaries are in [dicts/](https://github.com/lingjzhu/CharsiuG2P/tree/main/dicts). The train/dev/test splits are in [data/](https://github.com/lingjzhu/CharsiuG2P/tree/main/data). 
 
-- Word lists for some languages are acquired via [Leipzig Corpora Collection](https://wortschatz.uni-leipzig.de/en/download).
+All data we collected are in [sources/](https://github.com/lingjzhu/CharsiuG2P/tree/main/sources). The source and license information for each file is available in [sources/info](https://github.com/lingjzhu/CharsiuG2P/tree/main/sources/info).**Please cite the orginal sources to acknowledge the original authors if you use the data.**
+
+Allmost all of the data here come with licenses that allow redistribution. For the rest of them, the license is unspecified. If you are one of the creators of these data and do not wish us to host them, please let us know and we will immediately remove them per your request. 
+
+- For some languages, word lists for some languages are acquired via [Leipzig Corpora Collection](https://wortschatz.uni-leipzig.de/en/download).
 
  - A collection of publicly available G2P data are listed below.
    - [British English (RP/Standard Southern British ) pronunciation dictionary](https://github.com/JoseLlarena/Britfone)
