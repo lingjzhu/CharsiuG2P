@@ -99,11 +99,15 @@ Please cite our article:
   year={2022}
  }
 ```
+or
+
+```
 J. Zhu, C. Zhang, and D. Jurgens, “Byt5 model for massively
 multilingual grapheme-to-phoneme conversion,” 2022. [Online]. Available:
 https://arxiv.org/abs/2204.03067  
+```
 
-The resources we collected include:  
+**The resources we collected include:**  
 
 WikiPron (multiple languages):  
 
@@ -175,7 +179,7 @@ Kurdish (kur):
 
 Britfone (eng-uk):  
 
-````
+```
 @misc{britfone,
   title = {{Britfone}},
   author = {Llarena, Jose},
