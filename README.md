@@ -129,7 +129,7 @@ WikiPron (multiple languages):
 }
 ```
 
-eSpeak NG (multiple languages):   
+eSpeak NG (multiple languages). Word lists for some languages are acquired via [Leipzig Corpora Collection](https://wortschatz.uni-leipzig.de/en/download).   
 
 ```
 @misc{espeakng,
@@ -137,6 +137,14 @@ eSpeak NG (multiple languages):
   year = {2022},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/espeak-ng/espeak-ng}},
+}
+
+@inproceedings{goldhahn2012building,
+  title={Building large monolingual dictionaries at the leipzig corpora collection: From 100 to 200 languages},
+  author={Goldhahn, Dirk and Eckart, Thomas and Quasthoff, Uwe},
+  booktitle={Proceedings of the Eighth International Conference on Language Resources and Evaluation (LREC'12)},
+  pages={759--765},
+  year={2012}
 }
 ```
 
@@ -228,7 +236,7 @@ Swedish (swe):
 
 
 
-- For some languages, word lists for some languages are acquired via [Leipzig Corpora Collection](https://wortschatz.uni-leipzig.de/en/download).
+
 
  - A collection of publicly available G2P data are listed below.
    - [British English (RP/Standard Southern British ) pronunciation dictionary](https://github.com/JoseLlarena/Britfone)
