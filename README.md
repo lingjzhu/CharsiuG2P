@@ -80,11 +80,149 @@ python src/train.py --checkpoint path_to_pretrained_model_checkpoint --language 
 ### G2P Datasets
 A detailed catalogue of pronunciation dictionaries with downloadable links can be found in [this form](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit?usp=sharing).  
 
-We also make detailed documentation of the sources and the license of these data in *merge_final* page of the above form.  The sources of the pronunciationaries are in [dicts/](https://github.com/lingjzhu/CharsiuG2P/tree/main/dicts). The train/dev/test splits are in [data/](https://github.com/lingjzhu/CharsiuG2P/tree/main/data). **Please cite the orginal sources to acknowledge the original authors if you use the data.**
+We also make detailed documentation of the sources and the license of these data in *merge_final* page of the above form.  The sources of the pronunciationaries are in [dicts/](https://github.com/lingjzhu/CharsiuG2P/tree/main/dicts). The train/dev/test splits are in [data/](https://github.com/lingjzhu/CharsiuG2P/tree/main/data). **Please cite both our article and the original sources to acknowledge the original authors if you use the data.**
 
-All data we collected are in [sources/](https://github.com/lingjzhu/CharsiuG2P/tree/main/sources). The source and license information for each file is available in [sources/info](https://github.com/lingjzhu/CharsiuG2P/tree/main/sources/info).**Please cite the orginal sources to acknowledge the original authors if you use the data.**
+All data we collected are in [sources/](https://github.com/lingjzhu/CharsiuG2P/tree/main/sources). The source and license information for each file is available in [sources/info](https://github.com/lingjzhu/CharsiuG2P/tree/main/sources/info).
 
-Allmost all of the data here come with licenses that allow redistribution. For the rest of them, the license is unspecified. **If you are one of the creators of these data and do not wish us to host them, please let us know and we will immediately remove them per your request.** 
+
+Almost all of the data here come with licenses that allow redistribution. For the rest of them, the license is unspecified. **If you are one of the creators of these data and do not wish us to host them, please let us know and we will immediately remove them per your request.** 
+
+#### Attribution and Citation
+
+Please cite our article:  
+```
+@article{zhu2022charsiu-g2p,
+  title={ByT5 model for massively multilingual grapheme-to-phoneme conversion},
+  author={Zhu, Jian and Zhang, Cong and Jurgens, David},
+  url = {https://arxiv.org/abs/2204.03067},
+  doi = {10.48550/ARXIV.2204.03067},
+  year={2022}
+ }
+```
+J. Zhu, C. Zhang, and D. Jurgens, “Byt5 model for massively
+multilingual grapheme-to-phoneme conversion,” 2022. [Online]. Available:
+https://arxiv.org/abs/2204.03067  
+
+The resources we collected include:  
+
+WikiPron (multiple languages):  
+
+```
+@inproceedings{lee-etal-2020-massively,
+    title = "Massively Multilingual Pronunciation Modeling with {W}iki{P}ron",
+    author = "Lee, Jackson L.  and
+      Ashby, Lucas F.E.  and
+      Garza, M. Elizabeth  and
+      Lee-Sikka, Yeonju  and
+      Miller, Sean  and
+      Wong, Alan  and
+      McCarthy, Arya D.  and
+      Gorman, Kyle",
+    booktitle = "Proceedings of LREC",
+    year = "2020",
+    publisher = "European Language Resources Association",
+    pages = "4223--4228",
+}
+```
+
+eSpeak NG (multiple languages):   
+
+```
+@misc{espeakng,
+  title = {{eSpeak NG}},
+  year = {2022},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/espeak-ng/espeak-ng}},
+}
+```
+
+ipa-dict (multiple languages):  
+
+```
+@misc{ipa-dict,
+  title = {{ipa-dict}},
+  year = {2020},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/open-dict-data/ipa-dic}},
+}
+```
+
+Kurdish (kur):  
+
+```
+@article{veisi2020toward,
+  title={Toward Kurdish language processing: Experiments in collecting and processing the AsoSoft text corpus},
+  author={Veisi, Hadi and MohammadAmini, Mohammad and Hosseini, Hawre},
+  journal={Digital Scholarship in the Humanities},
+  volume={35},
+  number={1},
+  pages={176-193},
+  year={2020},
+  publisher={Oxford University Press}
+}
+
+@article{ahmadi2019rule,
+  title={A Rule-Based Kurdish Text Transliteration System},
+  author={Ahmadi, Sina},
+  journal={ACM Transactions on Asian and Low-Resource Language Information Processing (TALLIP)},
+  volume={18},
+  number={2},
+  pages={18},
+  year={2019},
+  publisher={ACM}
+}
+```
+
+Britfone (eng-uk):  
+
+````
+@misc{britfone,
+  title = {{Britfone}},
+  author = {Llarena, Jose},
+  year = {2017},
+  journal = {GitHub repository},
+  howpublished =  {\url{https://github.com/JoseLlarena/Britfone}},
+}
+```
+
+Thai (tha):  
+
+```
+@misc{thai-g2p,
+  title = {{thai-g2p}},
+  author = {Phatthiyaphaibun, Wannaphong},
+  year = {2020},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/sigmorphon/2020/tree/master/task1/}},
+}
+```
+
+Spanish (spa-latin):  
+
+```
+@misc{sandiago-spanish,
+  title = {{Santiago Spanish Lexicon
+}},
+  author = {Morgan, John},
+  year = {2017},
+  journal = {GitHub repository},
+  howpublished = {\url{https://www.openslr.org/34/}},
+}
+```
+
+Swedish (swe):  
+
+```
+@misc{Sprakbanken_Swe,
+  title = {{Sprakbanken Swedish pronunciation dictionary}},
+  author = {Phatthiyaphaibun, Wannaphong},
+  year = {2020},
+  journal = {GitHub repository},
+  howpublished = {\url{https://www.openslr.org/29/}},
+}
+```
+
+
 
 - For some languages, word lists for some languages are acquired via [Leipzig Corpora Collection](https://wortschatz.uni-leipzig.de/en/download).
 
@@ -115,7 +253,7 @@ docker pull lukeum/espeak-ng
 ```
 Please refer to espeak-ng's [user guide](https://github.com/espeak-ng/espeak-ng/blob/master/src/espeak-ng.1.ronn) for a tutorial.
 
-You can also convert it into a singualrity container.
+You can also convert it into a singularity container.
 
 
 
