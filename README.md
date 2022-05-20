@@ -26,7 +26,7 @@ Results for different models are available at [multilingual_results/](https://gi
 The format is language PER WER. 
 
 ### Pretrained models
-Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P". We are still in the process of uploading models.
+Pretrained models are hosted at [HuggingFace model hub](https://huggingface.co/charsiu) with the prefix "G2P". Multilingual models were uploaded. We are still trying to figure out how to host 100 monolingual models.
 
 ### Training and fine-tuning
 
