@@ -24,6 +24,7 @@ The model can be directly loaded from Huggingface Hub. Note that this model assu
 - For languages such as Chinese, Korean, Japanese (CJK languages) and some southeast Asian languages, words are not separated by spaces. An external tokenizers must be used before feeding words into this model.
 - Each words must be proceeded by a language code prefix, which is based on ISO-639 with some slight modification to distinguish local dialects. For example, the prefix code for American English is '\<eng-us\>: ' (**the space cannot be omitted!**). The full list of language codes can be found in this [document](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit#gid=557940309). 
 - For the sake of convenience, it is suggested that the .generate function is used to handle outputs. However, this could slows down the inference time significantly. 
+- We accidentally left out Korean in our original model (sorry!). We plan to update the model when we have time. However, you can also train one yourself as both Korean data and training scripts are available in this repo. 
 ```
 from transformers import T5ForConditionalGeneration, AutoTokenizer
 
@@ -39,7 +40,7 @@ out = tokenizer(words,padding=True,add_special_tokens=False,return_tensors='pt')
 preds = model.generate(**out,num_beams=1)
 phones = tokenizer.batch_decode(preds.tolist(),skip_special_tokens=True)
 print(phones)
-# ['ˈtʃɑɹ', 'ˈsiw', 'ˈɪs', 'ˈɑ', 'ˈkæntəˌniz', 'ˈstaɪɫ', 'ˈɑf', 'ˈbɑɹbɪkˌjud', 'ˈpɔɹk']
+# Output: ['ˈtʃɑɹ', 'ˈsiw', 'ˈɪs', 'ˈɑ', 'ˈkæntəˌniz', 'ˈstaɪɫ', 'ˈɑf', 'ˈbɑɹbɪkˌjud', 'ˈpɔɹk']
 
 # tokenized Thai words
 words = ['<tha>: ภาษา', '<tha>: ไทย']
@@ -47,7 +48,7 @@ out = tokenizer(words,padding=True,add_special_tokens=False,return_tensors='pt')
 preds = model.generate(**out,num_beams=1)
 phones = tokenizer.batch_decode(preds.tolist(),skip_special_tokens=True)
 print(phones)
-# ['pʰaː˧.saː˩˩˦', 'tʰaj˧']
+# Output: ['pʰaː˧.saː˩˩˦', 'tʰaj˧']
 # Correct pronunciation on wikipedia: [pʰāːsǎːtʰāj]
 ```
 
