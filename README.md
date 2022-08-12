@@ -41,7 +41,9 @@ preds = model.generate(**out,num_beams=1) # We do not find beam search helpful. 
 phones = tokenizer.batch_decode(preds.tolist(),skip_special_tokens=True)
 print(phones)
 # Output: ['ˈtʃɑɹ', 'ˈsiw', 'ˈɪs', 'ˈɑ', 'ˈkæntəˌniz', 'ˈstaɪɫ', 'ˈɑf', 'ˈbɑɹbɪkˌjud', 'ˈpɔɹk']
+```
 
+```
 # tokenized Thai words
 words = ['<tha>: ภาษา', '<tha>: ไทย']
 out = tokenizer(words,padding=True,add_special_tokens=False,return_tensors='pt')
