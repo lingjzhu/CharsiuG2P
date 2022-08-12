@@ -22,7 +22,7 @@ This repository also contains instructions to replicate the paper *ByT5 model fo
 
 The model can be directly loaded from Huggingface Hub. Note that this model assume that input words are already tokenized into individual words. 
 - For languages such as Chinese, Korean, Japanese (CJK languages) and some southeast Asian languages, words are not separated by spaces. An external tokenizers must be used before feeding words into this model.
-- Each words must be proceeded by a language code prefix, which is based on ISO-639 with some slight modification to distinguish local dialects. For example, the prefix code for American English is '\<eng-us\>: ' (**the space cannot be omitted!**). The full list of language codes can be found in this [document](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit#gid=557940309). 
+- Each word must be proceeded by a language code prefix, which is based on ISO-639 with some slight modification to distinguish local dialects. For example, the prefix code for American English is '\<eng-us\>: ' (**the space cannot be omitted!**). The full list of language codes can be found in this [document](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit#gid=557940309). 
 - For the sake of convenience, it is suggested that the .generate function is used to handle outputs. However, this could slows down the inference time significantly. 
 - We accidentally left out Korean in our original model (sorry!). We plan to update the model when we have time. However, you can also train one yourself as both Korean data and training scripts are available in this repo. 
 ```
