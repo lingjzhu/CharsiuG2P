@@ -3,7 +3,7 @@
 ### Introduction
 CharsiuG2P is transformer based tool for grapheme-to-phoneme conversion in 100 languages. Given an orthographic word, CharsiuG2P predicts its pronunciation through a neural G2P model.
 
-This repository also contains instructions to replicate the paper *ByT5 model for massively multilingual grapheme-to-phoneme conversion* [[arXiv]](https://arxiv.org/abs/2204.03067) [[pdf]](https://arxiv.org/pdf/2204.03067.pdf).  
+This repository also contains instructions to replicate our Interspeech 2022 paper *ByT5 model for massively multilingual grapheme-to-phoneme conversion* [[arXiv]](https://arxiv.org/abs/2204.03067) [[pdf]](https://arxiv.org/pdf/2204.03067.pdf).  
 
 ### Table of content
 - [Introduction](https://github.com/lingjzhu/CharsiuG2P#introduction)
