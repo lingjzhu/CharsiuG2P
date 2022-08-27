@@ -24,7 +24,11 @@ The model can be directly loaded from Huggingface Hub. Note that this model assu
 - For languages such as Chinese, Korean, Japanese (CJK languages) and some southeast Asian languages, words are not separated by spaces. An external tokenizers must be used before feeding words into this model.
 - Each word must be proceeded by a language code prefix, which is based on ISO-639 with some slight modification to distinguish local dialects/variants. For example, the prefix code for American English is '\<eng-us\>: ' (**The space following the colon cannot be omitted!**). The full list of language codes can be found in this [document](https://docs.google.com/spreadsheets/d/1y7kisk-UZT9LxpQB0xMIF4CkxJt0iYJlWAnyj6azSBE/edit#gid=557940309). 
 - For the sake of convenience, it is suggested that the .generate function is used to handle outputs. However, this could slows down the inference time significantly. 
-- We accidentally left out Korean in our original model (sorry!). We plan to update the model when we have time. However, you can also train one yourself as both Korean data and training scripts are available in this repo. 
+- We accidentally left out Korean in our original model (sorry!). Updated models that include Korean has been uploaded to Huggingface Hub. The following are the updated models that work also on Korean. 
+  - `charsiu/g2p_multilingual_byT5_tiny_8_layers_100`
+  - `charsiu/g2p_multilingual_byT5_tiny_12_layers_100`
+  - `charsiu/g2p_multilingual_byT5_tiny_16_layers_100`
+  - `charsiu/g2p_multilingual_byT5_small_100`
 ```
 from transformers import T5ForConditionalGeneration, AutoTokenizer
 
