@@ -28,7 +28,7 @@ The model can be directly loaded from Huggingface Hub. Note that this model assu
   - `charsiu/g2p_multilingual_byT5_tiny_8_layers_100`
   - `charsiu/g2p_multilingual_byT5_tiny_12_layers_100`
   - `charsiu/g2p_multilingual_byT5_tiny_16_layers_100`
-  - `charsiu/g2p_multilingual_byT5_small_100`
+  - `charsiu/g2p_multilingual_byT5_small_100` PER: 0.089 WER: 0.261
 ```
 from transformers import T5ForConditionalGeneration, AutoTokenizer
 
