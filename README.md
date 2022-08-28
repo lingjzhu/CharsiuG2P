@@ -28,7 +28,7 @@ The model can be directly loaded from Huggingface Hub. Note that this model assu
 ```
 from transformers import T5ForConditionalGeneration, AutoTokenizer
 
-model = T5ForConditionalGeneration.from_pretrained('charsiu/g2p_multilingual_byT5_tiny_16_layers')
+model = T5ForConditionalGeneration.from_pretrained('charsiu/g2p_multilingual_byT5_tiny_16_layers_100')
 tokenizer = AutoTokenizer.from_pretrained('google/byt5-small')
 
 # tokenized English words
