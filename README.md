@@ -58,7 +58,7 @@ print(phones)
 Results for different models are available at [multilingual_results/](https://github.com/lingjzhu/CharsiuG2P/tree/main/multilingual_results).
 The format is language PER WER. 
 
-- We accidentally left out Korean in our original model (sorry!). Updated models that include Korean has been uploaded to Huggingface Hub. The following are the updated models that work also on Korean.   
+We accidentally left out Korean in our original model (sorry!). Updated models that include Korean has been uploaded to Huggingface Hub. The following are the updated models that work also on Korean. Results for each of the 100 languages can be found in [multilingual_results/multilingual](https://github.com/lingjzhu/CharsiuG2P/tree/main/multilingual_results/multilingual). 
 
 | Model  | PER | WER |   
 | ------------- | ------------- | ------------- |  
