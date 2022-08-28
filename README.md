@@ -64,7 +64,7 @@ We accidentally left out Korean in our original model (sorry!). Updated models t
 | ------------- | ------------- | ------------- |  
 |`charsiu/g2p_multilingual_byT5_tiny_8_layers_100` |  |  |  
 |`charsiu/g2p_multilingual_byT5_tiny_12_layers_100` |  |  |  
-|`charsiu/g2p_multilingual_byT5_tiny_16_layers_100` |  |  |  
+|`charsiu/g2p_multilingual_byT5_tiny_16_layers_100` | 0.096 | 0.281 |  
 | `charsiu/g2p_multilingual_byT5_small_100` | 0.089 | 0.261 | 
 
 ### Pretrained models
