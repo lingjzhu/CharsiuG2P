@@ -37,7 +37,7 @@ words = ['<eng-us>: '+i for i in words]
 
 out = tokenizer(words,padding=True,add_special_tokens=False,return_tensors='pt')
 
-preds = model.generate(**out,num_beams=1) # We do not find beam search helpful. Greedy decoding is enough. 
+preds = model.generate(**out,num_beams=1,max_length=50) # We do not find beam search helpful. Greedy decoding is enough. 
 phones = tokenizer.batch_decode(preds.tolist(),skip_special_tokens=True)
 print(phones)
 # Output: ['ˈtʃɑɹ', 'ˈsiw', 'ˈɪs', 'ˈɑ', 'ˈkæntəˌniz', 'ˈstaɪɫ', 'ˈɑf', 'ˈbɑɹbɪkˌjud', 'ˈpɔɹk']
@@ -47,7 +47,7 @@ print(phones)
 # tokenized Thai words
 words = ['<tha>: ภาษา', '<tha>: ไทย']
 out = tokenizer(words,padding=True,add_special_tokens=False,return_tensors='pt')
-preds = model.generate(**out,num_beams=1)
+preds = model.generate(**out,num_beams=1,max_length=50)
 phones = tokenizer.batch_decode(preds.tolist(),skip_special_tokens=True)
 print(phones)
 # Output: ['pʰaː˧.saː˩˩˦', 'tʰaj˧']
