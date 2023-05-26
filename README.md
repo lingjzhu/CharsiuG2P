@@ -1,5 +1,7 @@
 # CharsiuG2P
 
+**Update**: We found that the pronounciation dictionary for Uzbek `uzb` is incorrect. Please do not use it in your applicaion. We will try our best to update the best resources we can find. 
+
 ### Introduction
 CharsiuG2P is transformer based tool for grapheme-to-phoneme conversion in 100 languages. Given an orthographic word, CharsiuG2P predicts its pronunciation through a neural G2P model.
 
