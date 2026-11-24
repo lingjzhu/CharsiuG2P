@@ -1,0 +1,6 @@
+# Source distribution extras: the tests (with their fixtures and the release tool
+# that test_remote.py runs) and the release docs. LICENSE and DATA_LICENSE.md come
+# from license-files in pyproject.toml.
+include CHANGELOG.md RELEASING.md
+recursive-include tests *.py
+recursive-include tools *.py

@@ -1,0 +1,63 @@
+# -*- coding: utf-8 -*-
+"""English reference names for ISO 639-3 codes the library has no name for.
+
+From the ISO 639-3 code table published by SIL International, the registration
+authority (https://iso639-3.sil.org/code_tables/download_tables, Ref_Name column;
+date ranges dropped). Only codes that appear in the agentg2p data are listed.
+"""
+
+REF_NAMES = {
+    # Retired codes still used by WikiPron: names from their retirement records.
+    "ajp": "South Levantine Arabic", "tpw": "Tupí", "yol": "Yola",
+    "ace": "Achinese", "acm": "Mesopotamian Arabic", "acw": "Hijazi Arabic", "ady": "Adyghe",
+    "afb": "Gulf Arabic", "aii": "Assyrian Neo-Aramaic", "akk": "Akkadian", "ale": "Aleut",
+    "aot": "Atong (India)", "apc": "Levantine Arabic", "apw": "Western Apache",
+    "arc": "Official Aramaic", "ary": "Moroccan Arabic", "arz": "Egyptian Arabic",
+    "ast": "Asturian", "ayl": "Libyan Arabic", "ban": "Balinese", "bar": "Bavarian", "bbl": "Bats",
+    "bbn": "Uneapa", "bcl": "Central Bikol", "bdq": "Bahnar", "bjb": "Banggarla", "blt": "Tai Dam",
+    "bua": "Buriat", "car": "Galibi Carib", "cbn": "Nyahkur", "cdo": "Min Dong Chinese",
+    "ceb": "Cebuano", "chb": "Chibcha", "cho": "Choctaw", "chr": "Cherokee", "cic": "Chickasaw",
+    "cjy": "Jinyu Chinese", "cnk": "Khumi Chin", "cop": "Coptic", "cpx": "Pu-Xian Chinese",
+    "crk": "Plains Cree", "crx": "Carrier", "csb": "Kashubian", "csp": "Southern Ping Chinese",
+    "dlm": "Dalmatian", "dng": "Dungan", "dsb": "Lower Sorbian", "dum": "Middle Dutch",
+    "egy": "Egyptian (Ancient)", "ett": "Etruscan", "evn": "Evenki", "fax": "Fala",
+    "fpe": "Fernando Po Creole English", "fro": "Old French", "frp": "Arpitan",
+    "frr": "Northern Frisian", "gan": "Gan Chinese", "gmh": "Middle High German",
+    "gml": "Middle Low German", "goh": "Old High German", "got": "Gothic", "gsw": "Swiss German",
+    "gul": "Sea Island Creole English", "gur": "Farefare", "guw": "Gun", "gwc": "Gawri",
+    "hak": "Hakka Chinese", "haw": "Hawaiian", "hil": "Hiligaynon", "hrx": "Hunsrik",
+    "hsn": "Xiang Chinese", "hts": "Hadza", "huu": "Murui Huitoto", "iba": "Iban", "ilo": "Iloko",
+    "inh": "Ingush", "izh": "Ingrian", "jam": "Jamaican Creole English", "jje": "Jejueo",
+    "kaw": "Kawi", "kbd": "Kabardian", "kgp": "Kaingang", "khb": "Lü", "kix": "Khiamniungan Naga",
+    "kld": "Gamilaraay", "klj": "Khalaj", "koi": "Komi-Permyak", "kok": "Konkani (macrolanguage)",
+    "kpv": "Komi-Zyrian", "krl": "Karelian", "kru": "Kurukh", "ksw": "S'gaw Karen",
+    "ktz": "Juǀʼhoan", "kwk": "Kwak'wala", "kxd": "Brunei", "kyu": "Western Kayah",
+    "lad": "Ladino", "lif": "Limbu", "lij": "Ligurian", "liv": "Liv", "lmo": "Lombard",
+    "lmy": "Lamboya", "lou": "Louisiana Creole", "lsi": "Lashi", "ltc": "Late Middle Chinese",
+    "ltg": "Latgalian", "luh": "Leizhou Chinese", "lut": "Lushootseed", "lwl": "Eastern Lawa",
+    "lzz": "Laz", "mai": "Maithili", "mak": "Makasar", "mch": "Maquiritari", "mdf": "Moksha",
+    "mdh": "Maguindanaon", "mfe": "Morisyen", "mga": "Middle Irish", "mic": "Mi'kmaq",
+    "mnc": "Manchu", "mnp": "Min Bei Chinese", "mnw": "Mon", "mqs": "West Makian", "mtq": "Muong",
+    "mww": "Hmong Daw", "nap": "Neapolitan", "nci": "Classical Nahuatl", "nds": "Low German",
+    "new": "Nepal Bhasa", "ngh": "Nǁng", "nhg": "Tetelcingo Nahuatl", "nhn": "Central Nahuatl",
+    "nhx": "Isthmus-Mecayapan Nahuatl", "niv": "Gilyak", "nmy": "Namuyi", "non": "Old Norse",
+    "nrf": "Jèrriais", "nup": "Nupe-Nupe-Tako", "och": "Old Chinese", "ofs": "Old Frisian",
+    "okm": "Middle Korean", "olo": "Livvi", "orv": "Old Russian", "osp": "Old Spanish",
+    "osx": "Old Saxon", "ota": "Ottoman Turkish", "pag": "Pangasinan", "pam": "Pampanga",
+    "pap": "Papiamento", "pbv": "Pnar", "pcc": "Bouyei", "pdc": "Pennsylvania German",
+    "pga": "Sudanese Creole Arabic", "phl": "Phalura", "pjt": "Pitjantjatjara",
+    "pms": "Piemontese", "pox": "Polabian", "ppl": "Central American Nawat",
+    "pqm": "Malecite-Passamaquoddy", "pwo": "Pwo Western Karen", "rgn": "Romagnol",
+    "rom": "Romany", "rsk": "Ruthenian", "rue": "Rusyn", "rup": "Macedo-Romanian", "sah": "Yakut",
+    "sce": "Dongxiang", "scn": "Sicilian", "sco": "Scots", "sdc": "Sassarese Sardinian",
+    "sga": "Old Irish", "shi": "Tachelhit", "shn": "Shan", "sia": "Akkala Sami", "sid": "Sidamo",
+    "sjd": "Kildin Sami", "sjs": "Senhaja De Srair", "skr": "Saraiki", "slr": "Salar",
+    "sms": "Skolt Sami", "srn": "Sranan Tongo", "srs": "Tsuut'ina", "stq": "Saterfriesisch",
+    "syc": "Classical Syriac", "syl": "Sylheti", "szl": "Silesian", "tft": "Ternate",
+    "tkl": "Tokelau", "tru": "Turoyo", "tts": "Northeastern Thai", "twf": "Northern Tiwa",
+    "tyv": "Tuvinian", "tzm": "Central Atlas Tamazight", "uby": "Ubykh", "ulw": "Ulwa (Nicaragua)",
+    "urk": "Urak Lawoi'", "vec": "Venetian", "vot": "Votic", "war": "Waray (Philippines)",
+    "wau": "Waurá", "wbk": "Waigali", "wiy": "Wiyot", "wlm": "Middle Welsh", "wuu": "Wu Chinese",
+    "xal": "Kalmyk", "xkz": "Kurtokha", "xsl": "South Slavey", "ybi": "Yamphu", "ycl": "Lolopo",
+    "yrk": "Nenets", "yrl": "Nhengatu", "yux": "Southern Yukaghir", "zom": "Zou", "zza": "Zaza",
+}

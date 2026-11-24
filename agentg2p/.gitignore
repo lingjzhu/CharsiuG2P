@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+# Data lives on the GitHub release, not in git.
+*.tar
+*.npz
+*.tsv.gz
+*.safetensors

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="agentg2p-token" content="{{TOKEN}}">
+<title>agentg2p</title>
+<link rel="stylesheet" href="app.css">
+<script src="app.js" defer></script>
+</head>
+<body data-view="transcribe">
+<svg width="0" height="0" class="defs" aria-hidden="true"><defs>
+  <symbol id="i-chev" viewBox="0 0 12 12"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 12 12"><path d="M2.5 6.2 5 8.6 9.6 3.6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 12 12"><path d="M3.2 3.2 8.8 8.8M8.8 3.2 3.2 8.8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M7 6.2v4M7 3.8v.9" stroke="currentColor" stroke-width="1.4"/></symbol>
+</defs></svg>
+
+<header class="toolbar">
+  <span class="appname">agentg2p</span>
+  <div class="views" role="tablist" aria-label="Views">
+    <button role="tab" data-view="transcribe" aria-selected="true" title="Transcribe (⌘1)">Transcribe</button>
+    <button role="tab" data-view="list" aria-selected="false" title="Word list (⌘2)">Word list</button>
+    <button role="tab" data-view="compare" aria-selected="false" title="Compare (⌘3)">Compare</button>
+    <button role="tab" data-view="dictionaries" aria-selected="false" title="Dictionaries (⌘4)">Dictionaries</button>
+  </div>
+  <button class="menu-btn menu-lang" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" title="Language (⌘L)">
+    <span class="k">Language</span><span class="v" id="lang-label">Loading</span><svg class="chev"><use href="#i-chev"/></svg>
+  </button>
+  <button class="menu-btn menu-dict" id="dict-btn" aria-haspopup="listbox" aria-expanded="false">
+    <span class="k">Dictionary</span><span class="v" id="dict-label">–</span><svg class="chev"><use href="#i-chev"/></svg>
+  </button>
+  <button class="menu-btn menu-model" id="model-btn" aria-haspopup="dialog" aria-expanded="false">
+    <span class="k">Model</span><span class="v" id="model-label">Auto</span><svg class="chev"><use href="#i-chev"/></svg>
+  </button>
+  <span class="spacer"></span>
+  <button class="primary" id="export-btn" disabled>Export TSV</button>
+</header>
+
+<main>
+  <section class="view split" id="view-transcribe" aria-label="Transcribe">
+    <div class="pane">
+      <div class="pane-head"><h2>Text</h2><span class="meta" id="t-lang"></span><span class="spacer"></span>
+        <button class="link" id="t-clear" hidden>Clear</button></div>
+      <textarea id="t-input" dir="auto" spellcheck="false" aria-label="Text to transcribe"></textarea>
+    </div>
+    <div class="pane">
+      <div class="pane-head"><h2>Transcription</h2><span class="meta" id="t-notation"></span><span class="spacer"></span>
+        <div class="seg small" role="group" aria-label="Phones">
+          <button data-join="0" aria-pressed="true" title="Phones separated by spaces">a b c</button><button data-join="1" aria-pressed="false" title="Phones joined">abc</button>
+        </div>
+        <button class="link" id="t-copy" disabled>Copy</button></div>
+      <div class="notes" id="t-notes" hidden></div>
+      <div class="table-wrap" id="t-wrap">
+        <table class="rows" id="t-table" hidden>
+          <thead><tr><th class="c-word">Word</th><th>Phones</th><th class="c-src">Source</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <div class="state" id="t-state"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-list" aria-label="Word list" hidden>
+    <div class="bar">
+      <button class="secondary" id="l-open">Open word list…</button>
+      <input type="file" id="l-file" accept=".txt,.csv,.tsv,text/plain,text/csv,text/tab-separated-values" hidden>
+      <span class="meta" id="l-name"></span>
+      <span class="spacer"></span>
+      <div class="seg small" id="l-filter" role="group" aria-label="Show"></div>
+      <span class="search"><input type="search" id="l-find" placeholder="Find a word" aria-label="Find a word"><button class="clear" type="button" aria-label="Clear search" hidden><svg><use href="#i-x"/></svg></button></span>
+    </div>
+    <div class="notes" id="l-notes" hidden></div>
+    <div class="table-wrap" id="l-wrap">
+      <table class="rows dense" id="l-table" hidden>
+        <thead><tr><th class="c-num">#</th><th class="c-word">Word</th><th>Phones</th><th class="c-src">Source</th><th class="c-var">Variants</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="state" id="l-state"></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-compare" aria-label="Compare" hidden>
+    <div class="bar">
+      <label class="field"><span>Word</span><input type="text" id="c-word" dir="auto" spellcheck="false" autocomplete="off"></label>
+      <span class="meta" id="c-meta"></span>
+    </div>
+    <div class="table-wrap" id="c-wrap">
+      <table class="rows" id="c-table" hidden>
+        <thead><tr><th class="c-dict">Dictionary</th><th class="c-notation">Notation</th><th>Phones</th><th class="c-src">Source</th><th class="c-per num">Test PER</th><th class="c-act"></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="state" id="c-state"></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-dictionaries" aria-label="Dictionaries" hidden>
+    <div class="bar">
+      <span class="search"><input type="search" id="d-find" placeholder="Filter by language, code or dictionary" aria-label="Filter dictionaries"><button class="clear" type="button" aria-label="Clear filter" hidden><svg><use href="#i-x"/></svg></button></span>
+      <div class="seg small" id="d-filter" role="group" aria-label="Show">
+        <button data-f="all" aria-pressed="true">All</button><button data-f="installed" aria-pressed="false">Downloaded</button>
+      </div>
+      <span class="spacer"></span>
+      <span class="meta" id="d-meta"></span>
+    </div>
+    <div class="table-wrap" id="d-wrap">
+      <table class="rows dense" id="d-table" hidden>
+        <thead><tr>
+          <th class="c-lang"><button class="sort" data-k="language">Language</button></th>
+          <th class="c-code"><button class="sort" data-k="lang">Code</button></th>
+          <th><button class="sort" data-k="name">Dictionary</button></th>
+          <th class="c-notation"><button class="sort" data-k="notation">Notation</button></th>
+          <th class="c-words num"><button class="sort" data-k="words">Words</button></th>
+          <th class="c-model"><button class="sort" data-k="model">Model</button></th>
+          <th class="c-per num"><button class="sort" data-k="per">Test PER</button></th>
+          <th class="c-act"></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="state" id="d-state"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="status">
+  <span id="s-left"></span>
+  <span class="spacer"></span>
+  <span id="s-msg" role="status" aria-live="polite"></span>
+  <span id="s-right"></span>
+</footer>
+
+<div class="pop" id="lang-pop" hidden>
+  <span class="search"><input type="search" id="lang-find" placeholder="Search 383 languages or codes" aria-label="Search languages" autocomplete="off"><button class="clear" type="button" aria-label="Clear search" hidden><svg><use href="#i-x"/></svg></button></span>
+  <div class="opts" id="lang-opts" role="listbox" aria-label="Languages"></div>
+</div>
+<div class="pop" id="dict-pop" hidden>
+  <div class="opts" id="dict-opts" role="listbox" aria-label="Dictionaries"></div>
+</div>
+<div class="pop narrow" id="model-pop" hidden role="dialog" aria-label="Model">
+  <div class="opts" id="model-opts"></div>
+</div>
+<div class="pop narrow tip" id="per-pop" hidden role="dialog" aria-label="About test PER">
+  <p><b>Test PER</b> is the phone error rate on this dictionary's held-out test words.</p>
+  <p>It is optimistic for words the model predicts: the same test words chose which model to use, and real unknown words (names, loanwords) are usually harder.</p>
+</div>
+</body>
+</html>

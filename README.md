@@ -10,6 +10,7 @@ This repository also contains instructions to replicate our Interspeech 2022 pap
 ### Table of content
 - [Introduction](https://github.com/lingjzhu/CharsiuG2P#introduction)
 - [Usage](https://github.com/lingjzhu/CharsiuG2P#usage)
+- [agentg2p library](https://github.com/lingjzhu/CharsiuG2P#agentg2p-library)
 - [Results](https://github.com/lingjzhu/CharsiuG2P#results)
 - [Pretrained models](https://github.com/lingjzhu/CharsiuG2P/blob/main/README.md#pretrained-models)
 - [Training and fine-tuning](https://github.com/lingjzhu/CharsiuG2P#training-and-fine-tuning)
@@ -55,6 +56,12 @@ print(phones)
 # Output: ['pʰaː˧.saː˩˩˦', 'tʰaj˧']
 # Correct pronunciation on wikipedia: [pʰāːsǎːtʰāj]
 ```
+
+### agentg2p library
+
+The [`agentg2p/`](agentg2p/) folder contains agentg2p, a Python library for G2P with 717 pronunciation dictionaries. These include the CharsiuG2P dictionaries.
+For each word, agentg2p finds the word in the dictionary. If the dictionary does not have the word, agentg2p uses a Phonetisaurus FST or a ByT5 model.
+Refer to [agentg2p/README.md](agentg2p/README.md).
 
 ### Results
 Results for different models are available at [multilingual_results/](https://github.com/lingjzhu/CharsiuG2P/tree/main/multilingual_results).
