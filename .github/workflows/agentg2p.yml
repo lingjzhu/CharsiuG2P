@@ -1,0 +1,58 @@
+# Tests for the agentg2p library in agentg2p/. Runs only when that folder changes.
+name: agentg2p
+on:
+  push:
+    paths: ["agentg2p/**", ".github/workflows/agentg2p.yml"]
+  pull_request:
+    paths: ["agentg2p/**", ".github/workflows/agentg2p.yml"]
+defaults:
+  run:
+    working-directory: agentg2p
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.9", "3.13"]
+        exclude:
+          - os: ubuntu-latest  # no Python 3.9 builds for current Ubuntu runners
+            python: "3.9"
+        include:
+          - os: ubuntu-latest
+            python: "3.10"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - run: agentg2p --help
+
+  # Build, check the metadata, install the wheel into a clean environment
+  # and run the tests from the sdist.
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install build twine
+      - run: python -m build
+      - run: python -m twine check --strict dist/*
+      - name: Install the wheel into a clean environment
+        run: |
+          python -m venv /tmp/wheelenv
+          /tmp/wheelenv/bin/pip install dist/*.whl
+          cd /tmp
+          /tmp/wheelenv/bin/agentg2p --version
+          /tmp/wheelenv/bin/python -c "import agentg2p; print(agentg2p.__version__, agentg2p.__file__)"
+      - name: Run the tests from the unpacked sdist
+        run: |
+          mkdir /tmp/sdist
+          tar xzf dist/*.tar.gz -C /tmp/sdist
+          cd /tmp/sdist/agentg2p-*
+          /tmp/wheelenv/bin/python -m unittest discover -s tests

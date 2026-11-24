@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentg2p"
+dynamic = ["version"]
+description = "Grapheme-to-phoneme conversion for 350+ languages: dictionary lookup, then a Phonetisaurus FST or ByT5 model"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "DATA_LICENSE.md"]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21", "certifi", "pywebview>=5"]
+keywords = ["g2p", "grapheme-to-phoneme", "phonetics", "IPA", "pronunciation", "phonetisaurus", "byt5",
+            "multilingual", "text-to-speech"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+[project.optional-dependencies]
+neural = ["torch>=2.0", "transformers>=4.40", "safetensors"]
+
+[project.urls]
+Homepage = "https://github.com/extreme-coder/agentg2p-lib"
+Source = "https://github.com/extreme-coder/agentg2p-lib"
+Issues = "https://github.com/extreme-coder/agentg2p-lib/issues"
+Changelog = "https://github.com/extreme-coder/agentg2p-lib/blob/main/CHANGELOG.md"
+Data = "https://github.com/extreme-coder/agentg2p-lib/releases/tag/v0.1.0"
+
+[project.scripts]
+agentg2p = "agentg2p.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["agentg2p", "agentg2p.ui", "agentg2p.ui.static", "agentg2p.ui.static.fonts"]
+
+[tool.setuptools.package-data]
+# The desktop window: its page, script, stylesheet and fonts (with their OFL licences).
+"agentg2p.ui.static" = ["*.html", "*.css", "*.js"]
+"agentg2p.ui.static.fonts" = ["*.woff2", "*.txt"]
+
+[tool.setuptools.dynamic]
+# One place for the version: src/agentg2p/__init__.py (read without importing the package).
+version = {attr = "agentg2p.__version__"}
